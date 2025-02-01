@@ -5,7 +5,7 @@
 [Download Simulation Video](DemoVideos/video.mkv)
 <p align="center">
   <video width="70%" controls>
-    <source src="DemoVideos/video.mkv" type="video/mp4">
+    <source src="DemoVideos/video.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </p>
