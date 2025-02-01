@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<robot name="gripper" xmlns:xacro="http://ros.org/wiki/xacro">	
+	<xacro:include filename="$(find wsg50_gripper)/urdf/wsg_50.urdf.xacro"/>	
+	<xacro:wsg_50_xacro prefix="" parent="tool0">
+		<origin xyz="0 0 0" rpy="0 0 0"/>
+	</xacro:wsg_50_xacro>
+</robot>
+
+
+

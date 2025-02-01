@@ -1,0 +1,37 @@
+# ROS build directories
+build/
+devel/
+install/
+
+# ROS logs
+log/
+logs/
+
+# ROS package-specific files
+*.pyc
+*.swp
+*.bak
+*.tmp
+*.log
+
+# Catkin workspace files
+.cproject
+.project
+.settings/
+
+# Ignore hidden files and directories
+.*.swp
+.*.swo
+.*.swn
+.*.bak
+.*.tmp
+.*.log
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+*.iml

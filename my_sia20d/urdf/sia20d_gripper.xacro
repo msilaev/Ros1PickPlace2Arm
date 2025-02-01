@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<robot name="motoman_sia20d_with_gripper" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <!-- Include the Motoman SIA20D robot description -->
+    <xacro:include filename="$(find my_sia20d)/urdf/sia20d_macro.xacro"/>
+    <xacro:include filename="$(find wsg50_gripper)/urdf/wsg_50.urdf.xacro"/>
+
+    <!-- Instantiate the SIA20D robot -->
+    <xacro:motoman_sia20d prefix="sia20d_m"/>
+
+    <!-- Instantiate the gripper with desired parameters -->
+    <xacro:wsg_50_xacro name="gripper" finger_length="0.023" finger_tip="0"/>
+
+    <!-- Define a fixed joint to attach the gripper to the robot's end-effector link -->
+    <joint name="sia20d_tool0_to_gripper" type="fixed">
+        <parent link="tool0"/>  <!-- The end-effector link of the SIA20D robot -->
+        <child link="gripper_base_link"/>  <!-- Base link of the gripper -->
+        <origin xyz="0 0 0.1" rpy="0 0 0"/>  <!-- Adjust position and orientation as needed -->
+    </joint>
+
+</robot>
+

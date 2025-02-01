@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<robot name="motoman_sia20d" xmlns:xacro="http://ros.org/wiki/xacro">
+	<xacro:include filename="$(find my_sia20d)/urdf/sia20d_macro.xacro"/>
+	
+	<!--Import macro for left arm gripper-->
+	<xacro:include filename="$(find wsg50_gripper)/urdf/wsg_50.urdf.xacro" />
+	
+	
+	<!-- link list -->
+	<link name="world"/>
+	<xacro:motoman_sia20d prefix="one_"/>
+	<!--Create an instance of the right arm gripper macro-->
+	
+	
+	<xacro:wsg_50_xacro name="right_gripper" finger_length="0.20" finger_tip="0.02" />
+
+		
+	<joint name="one_world" type="fixed">
+		<parent link="world"/>
+		<child link="one_base_link"/>
+		<origin xyz="0.7 0 0.7" rpy="0 0 0"/>
+	</joint>
+	
+	<!--Joints joining the grippers to the robot-->
+	<joint name="one_tool0_gripper" type="fixed">
+    		<parent link="one_tool0"/>
+    		<child link="right_gripper_base_link"/> <!-- Make sure this matches the base link in the gripper xacro file -->
+    		<origin xyz="0 0 0" rpy="0 0 3.14159"/>
+	</joint>
+
+	
+	<xacro:motoman_sia20d prefix="two_"/>
+	
+	
+	<xacro:wsg_50_xacro name="left_gripper" finger_length="0.20" finger_tip="0.02" />
+
+	
+	<joint name="two_world" type="fixed">
+		<parent link="world"/>
+		<child link="two_base_link"/>
+		<origin xyz="-0.7 0 0.7" rpy="0 0 0"/>
+	</joint>	
+	
+	<!--Joints joining the grippers to the robot-->
+	<joint name="two_tool0_gripper" type="fixed">
+    		<parent link="two_tool0"/>
+    		<child link="left_gripper_base_link"/> <!-- Make sure this matches the base link in the gripper xacro file -->
+    		<origin xyz="0 0 0" rpy="0 0 3.14159"/>
+	</joint>
+
+</robot>
+

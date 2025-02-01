@@ -1,0 +1,13 @@
+<launch>
+  <!-- Launch MoveIt2 -->
+  <include file="$(find my_moveit2)/launch/demo.launch" />
+
+  <!-- Launch scene_interface.py -->
+  <node pkg="motion_test_pkg" type="scene_interface.py" name="scene_interface" output="screen" />
+
+  <!-- Launch motion_control.py -->
+  <node pkg="motion_test_pkg" type="motion_control.py" name="motion_control" output="screen" />
+
+  <!-- Launch random_pose_generator.py -->
+  <node pkg="motion_test_pkg" type="random_pose_generator.py" name="random_pose_generator" output="screen" />
+</launch>
