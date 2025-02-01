@@ -34,17 +34,15 @@
 
 
 ## Introduction
-The dual-arm pick-and-place application represents a practical implementation of advanced robotic concepts, leveraging the Robot Operating System (ROS) to coordinate motion and object manipulation. The primary objective of this assignment was to design and implement a system where two robotic arms collaborate to perform pick-and-place tasks involving two boxes spawned at random positions. This task required the integration of multiple ROS nodes to ensure seamless operation, including scene setup, pose generation, motion control, and action feedback mechanisms.
+The dual-arm pick-and-place application represents a practical implementation of advanced robotic concepts, leveraging the Robot Operating System (ROS) to coordinate motion and object manipulation. The primary objective of this work was to design and implement a system where two robotic arms collaborate to perform pick-and-place tasks involving two boxes spawned at random positions. This task required the integration of multiple ROS nodes to ensure seamless operation, including scene setup, pose generation, motion control, and action feedback mechanisms.
 
-The application builds upon the dual-arm robotic setup developed in the first part of Assignment 1. Besides the general motoman package, the application includes four packages:
+Besides the general motoman package, the application includes four packages:
 - **my_sia20d**: Contains URDF and XACRO configurations for the dual-arm setup consisting of two SIA20D robots and gripper defined in wsg50_gripper.
 - **wsg50_gripper**: Contains URDF and configurations for the grippers attached to the robotic arms.
 - **my_moveit2**: Contains SRDF file with the definition of Moveit motion groups for the dual-arm robot with grippers. It includes definitions of common poses like home position, closed and open gripper, and other configuration and controller files.
 - **motion_test_pkg**: Contains the functionality related to the pick-and-place action specified in the assignment.
 
-Packages my_moveit2 and my_sia20d were developed by us in Part 1 of the Assignment. The gripper package wsg50_gripper was provided by the teachers. For this Part 2 of the Assignment, we have developed a new package (motion_test_pkg) which includes three nodes responsible for (i) adding boxes to the scene – large box for green table, “base box” and “top box” at random coordinates; attaching “top box” to the robot links, (ii) planning and implementing robot motion, (iii) generating random coordinates of “top box” and “base box ”. Communication between these nodes is implemented using three Services. Communication between user and system is implemented using ROS action which allows setting goals and monitoring the system's progress in real-time.
-
-This report documents the steps taken to design, implement, and test the dual-arm pick-and-place application. It highlights the technical challenges encountered and the solutions developed to achieve a reliable and functional system.
+Package (motion_test_pkg) includes three nodes responsible for (i) adding boxes to the scene – large box for green table, “base box” and “top box” at random coordinates; attaching “top box” to the robot links, (ii) planning and implementing robot motion, (iii) generating random coordinates of “top box” and “base box ”. Communication between these nodes is implemented using three Services. Communication between user and system is implemented using ROS action which allows setting goals and monitoring the system's progress in real-time.
 
 ## Prerequisites
 
