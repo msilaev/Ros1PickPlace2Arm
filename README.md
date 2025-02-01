@@ -4,6 +4,12 @@
 
 [Download Simulation Video](DemoVideos/video.mkv)
 <p align="center">
+  <video width="70%" controls>
+    <source src="DemoVideos/video.mkv" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</p>
+<p align="center">
   <img src="DemoVideos/2arm.png" width="70%" />
 </p>
 
